@@ -1,2 +1,2 @@
-# scss-project
-My own project
+# portfolio-project
+Tutorial project

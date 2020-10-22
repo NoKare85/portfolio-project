@@ -76,11 +76,24 @@ main {
 
 .about-info {
     display: grid;
-    grid-gap: 30px;
+    grid-gap: 20px;
     grid-template-areas:
         "bio-image bio bio"
-        "job-1 job-2 job-3";
+        "job-3 job-2 job-1";
     grid-template-columns: repeat(3, 1fr);
+
+    &.shuffled {
+        grid-template-areas:
+            "bio-image bio-image"
+            "bio bio"
+            "job-1 job-1"
+            "job-2 job-3";
+        grid-template-columns: repeat(2, 1fr);
+        @include easeOut;
+        &.job {
+            transform: translate3d(600px, 0, 0);
+        }
+    }
 
     .bio-image {
         grid-area: bio-image;

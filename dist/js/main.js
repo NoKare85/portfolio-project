@@ -4,11 +4,15 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
+const shuffleBtn = document.querySelector(".shuffle");
+const bioArea = document.querySelector(".about-info");
 
 // Set Initial State of Menu
 let showMenu = false;
+let shuffled = false;
 
 menuBtn.addEventListener("click", toggleMenu);
+shuffleBtn.addEventListener("click", shuffle);
 
 function toggleMenu() {
     if (!showMenu) {
@@ -29,5 +33,15 @@ function toggleMenu() {
 
         //Set Menu State
         showMenu = false;
+    }
+}
+
+function shuffle() {
+    if (!shuffled) {
+        bioArea.classList.add("shuffled");
+        shuffled = true;
+    } else {
+        bioArea.classList.remove("shuffled");
+        shuffled = false;
     }
 }
